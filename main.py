@@ -4,16 +4,15 @@ import numpy as np
 x = np.linspace(0, 2, 10)
 
 fig, ax = plt.subplots()
-ax.plot(x, x, label='linear')
-ax.plot(x, x ** 2, label='quadratic')
-ax.plot(x, x ** 3, label='cubic')
+# ax.plot(x, x, label='linear')
+# ax.plot(x, x ** 2, label='quadratic')
+# ax.plot(x, x ** 3, label='cubic')
 
 ax.set_xlabel('x label')
 ax.set_ylabel('y label')
 
 ax.set_title('Simple Plot')
 ax.legend()
-plt.show()
 
 
 def my_plotter(ax, data1, data2, param_dict):
@@ -36,3 +35,10 @@ def my_plotter(ax, data1, data2, param_dict):
     """
     out = ax.plot(data1, data2, **param_dict)
     return out
+
+
+data2 = np.random.rand(10, 1)
+
+my_plotter(ax, x, data2, {'marker': 'x'})
+
+plt.show()
